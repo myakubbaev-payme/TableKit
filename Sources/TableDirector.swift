@@ -348,7 +348,7 @@ open class TableDirector: NSObject, UITableViewDataSource, UITableViewDelegate {
     }
     
     open func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
-        return sections[indexPath.section].rows[indexPath.row].editingActions
+        return sections[(indexPath as NSIndexPath).section].rows[indexPath.row].editingActions
     }
     
     open func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
