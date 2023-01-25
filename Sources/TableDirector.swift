@@ -348,7 +348,10 @@ open class TableDirector: NSObject, UITableViewDataSource, UITableViewDelegate {
     }
     
     open func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
-        print("=== indexPath", indexPath)
+        guard indexPath.count == 2 else {
+            print("indexPath count is expected to be 2, but got", indexPath.count)
+            return nil
+        }
         return sections[indexPath.section].rows[indexPath.row].editingActions
     }
     
